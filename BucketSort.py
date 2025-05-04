@@ -4,14 +4,14 @@ from LinkedList import Node, LinkedList
 def BucketSort(A, m):
     
     # create an empty array with m empty LinkedLists
-    B = [LinkedList()] * m
+    B = [LinkedList() for _ in range(m)]
 
     n = len(A)
 
     for i in range(n):
         
         # pull the key for element i in A
-        key = A[i].key
+        key = list(A[i].keys())[0]
 
         # add A[i] to the end the list B[A[i].key]
         B[key].addtoEnd(A[i])

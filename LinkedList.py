@@ -28,7 +28,7 @@ class LinkedList:
 
         self.numelements += 1
             
-    def deleteFront(self):
+    def removeFront(self):
         
         if self.numelements == 0:       # return None if the list is empty
             return None
