@@ -4,17 +4,17 @@ from LinkedList import Node, LinkedList
 def BucketSort(A, m):
     
     # create an empty array with m empty LinkedLists
-    B = [LinkedList() for _ in range(m)]
+    B = [LinkedList() for _ in range(m + 1)]
 
     n = len(A)
 
     for i in range(n):
         
-        # pull the key for element i in A
-        key = list(A[i].keys())[0]
-
+        # pull the key (weight) for element i in A
+        weight = list(A[i].items())[0][1]
+                   
         # add A[i] to the end the list B[A[i].key]
-        B[key].addtoEnd(A[i])
+        B[weight].addtoEnd(A[i])
 
     # concatenate the LinkedLists to return the array in sorted order
     i = 0
