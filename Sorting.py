@@ -27,3 +27,6 @@ def BucketSort(A, m):
             i += 1
 
     return A
+
+# Define a Function to Implement QuickSort
+
