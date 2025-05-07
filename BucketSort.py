@@ -11,7 +11,7 @@ def BucketSort(A, m):
     for i in range(n):
         
         # pull the key (weight) for element i in A
-        weight = list(A[i].items())[0][1]
+        weight = A[i][0]
                    
         # add A[i] to the end the list B[A[i].key]
         B[weight].addtoEnd(A[i])
