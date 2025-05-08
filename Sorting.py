@@ -30,3 +30,28 @@ def BucketSort(A, m):
 
 # Define a Function to Implement QuickSort
 
+def Quicksort(edges, low=0, high=None):
+    if high is None:
+        high = len(edges) - 1
+    if low < high:
+        pivot = partition(edges, low, high)
+    
+    Quicksort(edges, low, pivot - 1)
+    Quicksort(edges, pivot + 1, high)
+
+def partition(arr, low, high):
+
+    pv = arr[high]
+    
+    i = low - i
+
+    for j in range(low, high):
+        if arr[j] < pivot:
+            i += 1
+            swap (arr, i, j)
+    
+    swap(arr, i + 1, high)
+    return i + 1
+    
+def swap(arr, i, j):
+    arr[i], arr[j] = arr[j], arr[i]
