@@ -29,29 +29,31 @@ def BucketSort(A, m):
     return A
 
 # Define a Function to Implement QuickSort
-
-def Quicksort(edges, low=0, high=None):
-    if high is None:
-        high = len(edges) - 1
+def QuickSort(arr, low, high):
     if low < high:
-        pivot = partition(edges, low, high)
-    
-    Quicksort(edges, low, pivot - 1)
-    Quicksort(edges, pivot + 1, high)
+        
+        # pi is the partition return index of pivot
+        pi = partition(arr, low, high)
+        
+        # Recursion calls for smaller elements
+        # and greater or equals elements
+        QuickSort(arr, low, pi - 1)
+        QuickSort(arr, pi + 1, high)
 
 def partition(arr, low, high):
+    pv = arr[high]  # Pivot element
+    i = low - 1     # Initialize the index of smaller element
 
-    pv = arr[high]
-    
-    i = low - i
-
+    # Traverse through the array segment
     for j in range(low, high):
-        if arr[j] < pivot:
+        if arr[j][0] < pv[0]:  # Assuming tuples or lists in arr
             i += 1
-            swap (arr, i, j)
+            swap(arr, i, j)
     
+    # Place the pivot element in its correct sorted position
     swap(arr, i + 1, high)
     return i + 1
-    
+
 def swap(arr, i, j):
     arr[i], arr[j] = arr[j], arr[i]
+
